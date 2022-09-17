@@ -13,6 +13,11 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
     const previousBalanceTotal = getTextElementValueById("balance-total");
     const newWithdrawAmount = getInputFieldValueById("withdraw-field");
 
+    if( isNaN(newWithdrawAmount)=== true ){
+      alert("Please Give an Input as Withdraw Amount");
+      return;
+    }
+
     if (newWithdrawAmount > previousBalanceTotal) {
       alert("You don't have sufficient balance");
       return;
